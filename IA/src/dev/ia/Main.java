@@ -15,32 +15,32 @@ public class Main {
 		
 		//taxa de crossover
         Algoritimo.setTaxaDeCrossover(0.01);
-        //taxa de mutação
+        //taxa de mutaÃ§Ã£o
         Algoritimo.setTaxaDeMutacao(9.0);
         //elitismo
         boolean eltismo = true;
-        //tamanho da população
+        //tamanho da populaÃ§Ã£o
         int tamPop = 1000;
-        //numero máximo de gerações
+        //numero mÃ¡ximo de geraÃ§Ãµes
         int numMaxGeracoes = 1000;
 
-        //define o número de genes do indivíduo baseado na solução
+        //define o nÃºmero de genes do indivÃ­duo baseado na soluÃ§Ã£o
         int qtdclareira = 10;
         int qtddoces = 5;
 
-        //cria a primeira população aleatória
+        //cria a primeira populaÃ§Ã£o aleatÃ³ria
         Populacao populacao = new Populacao(qtdclareira, qtddoces, tamPop);
 
         int geracao = 0;
         
-        //loop até o critério de parada
+        //loop atÃ© o critÃ©rio de parada
         while ( geracao < numMaxGeracoes) {
             geracao++;
 
             //cria nova populacao
             populacao = Algoritimo.novaGeracao(populacao, eltismo);
 
-            System.out.print("Geração " + geracao + " | Aptidão: " + populacao.getIndivduo(0).getAptidao() + " | Melhor: ");
+            System.out.print("GeraÃ§Ã£o " + geracao + " | AptidÃ£o: " + populacao.getIndivduo(0).getAptidao() + " | Melhor: ");
             for(int i=0; i < populacao.getIndivduo(0).getGns().length; i++){
             	for(int j=0; j < populacao.getIndivduo(0).getGns()[0].length; j++){
             		System.out.print(populacao.getIndivduo(0).getGns()[i][j]);
@@ -52,7 +52,7 @@ public class Main {
         }
 
         if (geracao == numMaxGeracoes) {
-            System.out.println("Número Maximo de Gerações | " + populacao.getIndivduo(0).getAptidao());
+            System.out.println("NÃºmero Maximo de GeraÃ§Ãµes | " + populacao.getIndivduo(0).getAptidao());
         }
 
 		char[][] mapChar = (new Maploader()).getmap();
@@ -61,7 +61,7 @@ public class Main {
 		Map<ExampleNode> myMap = new Map<ExampleNode>(41, 41, new ExampleNode(), mapChar);
 		List<ExampleNode> path = myMap.findPath(36, 4, 36, 36);
 
-		Game game = new Game("IA Chapeuzinho Vermelho", 950, 900);
+		Game game = new Game("IA Chapeuzinho Vermelho", 950, 860);
 		double sumapreciation;
 		int numClareira = 0;
 		tempo = (int)System.currentTimeMillis();
