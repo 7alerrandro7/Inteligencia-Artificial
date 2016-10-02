@@ -86,6 +86,7 @@ public class Drawmap extends JPanel {
 	    }
 		
 		g.setColor(Color.BLACK);
-		g.drawString("Tempo: " + Double.toString(this.tempo), 841, 10);
+		String resul = String.format("%.4f",  this.tempo);
+		g.drawString("Tempo: " + resul, 841, 10);
 	}
 }
